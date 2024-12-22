@@ -11,5 +11,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
-  "cSpell.words": ["Nuxt"]
+  "cSpell.words": ["Nuxt"],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".copilot-commit-message-instructions.md"
+    }
+  ]
 }
