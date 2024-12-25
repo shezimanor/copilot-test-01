@@ -22,6 +22,9 @@
     },
     {
       "file": ".copilot-instructions.md"
+    },
+    {
+      "file": ".nuxt-ui-instructions.md"
     }
   ]
 }
