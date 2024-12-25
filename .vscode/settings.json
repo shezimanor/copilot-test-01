@@ -26,5 +26,13 @@
     {
       "file": ".nuxt-ui-instructions.md"
     }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "No matter what language my changes are in, commit messages must be written in English."
+    },
+    {
+      "file": ".copilot-commit-message-instructions.md"
+    }
   ]
 }
