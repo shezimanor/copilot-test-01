@@ -4,7 +4,7 @@
 
 這是一個用於管理待辦事項的簡單工具，允許用戶新增、查看、編輯及刪除待辦事項。所有資料將存儲於用戶的瀏覽器 localStorage，以確保數據在用戶的裝置上保留。
 
-請使用專案內的 Nuxt3 架構，同時使用 Nuxt UI Library 進行開發。
+請使用專案內的 Nuxt3 架構以 TypeScript 撰寫程式，同時使用 Nuxt UI Library 進行開發。
 
 ## 實體列表與規則
 
@@ -34,6 +34,8 @@
 | 刪除任務     | 移除一個任務                                                   | 從 localStorage 中刪除該任務                            |
 | 標記完成     | 用戶將任務標記為已完成                                         | 將 isCompleted 設為 true，更新 updatedAt 欄位           |
 | 清除完成任務 | 一鍵刪除所有已完成的任務                                       | 遍歷 localStorage，刪除所有 isCompleted 為 true 的任務  |
+
+請用 composables 撰寫實體的邏輯。
 
 ## 業務邏輯規則
 
