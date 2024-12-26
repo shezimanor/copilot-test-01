@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { difference } from './difference';
+import difference from './difference';
 
 describe('difference 函式', () => {
   it('應該回傳在第一個陣列中但不在第二個陣列中的元素', () => {

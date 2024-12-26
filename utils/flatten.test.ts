@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { flatten } from './flatten';
+import flatten from './flatten';
 
 describe('flatten', () => {
   it('應該將嵌套陣列扁平化一層', () => {
