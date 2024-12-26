@@ -24,7 +24,7 @@
 const props = defineProps<{ task?: Task }>();
 const emit = defineEmits(['close', 'save']);
 
-const taskData = ref({
+const taskData = ref<Task>({
   id: '',
   title: '',
   description: '',
@@ -38,8 +38,10 @@ watch(
   () => props.task,
   (newTask) => {
     if (newTask) {
+      // 表示編輯任務
       taskData.value = { ...taskData.value, ...newTask };
     } else {
+      // 表示新增任務
       taskData.value = {
         id: '',
         title: '',
@@ -56,7 +58,6 @@ watch(
 
 const saveTask = () => {
   if (!taskData.value.id) {
-    taskData.value.id = Date.now().toString();
     taskData.value.createdAt = new Date().toISOString();
   }
   taskData.value.updatedAt = new Date().toISOString();

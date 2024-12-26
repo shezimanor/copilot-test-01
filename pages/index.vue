@@ -4,7 +4,7 @@
     <button @click="showAddTaskModal = true">新增任務</button>
     <button @click="clearCompletedTasks">清除完成任務</button>
     <ul>
-      <li v-for="task in tasks" :key="task.id">
+      <li v-for="task in tasks" :key="`t_${task.id}`">
         <span>{{ task.title }}</span>
         <span>{{ task.dueDate }}</span>
         <input type="checkbox" v-model="task.isCompleted" @change="markTaskCompleted(task.id)" />

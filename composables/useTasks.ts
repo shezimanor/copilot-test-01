@@ -1,5 +1,5 @@
 export interface Task {
-  id: string;
+  id: UUIDTypes;
   title: string;
   description?: string;
   dueDate?: string;
@@ -7,10 +7,11 @@ export interface Task {
   createdAt: string;
   updatedAt: string;
 }
+import { v4, type UUIDTypes } from 'uuid';
 
 const tasks = ref<Task[]>([]);
 
-export function useTasks() {
+export const useTasks = () => {
   const loadTasks = () => {
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
@@ -22,9 +23,18 @@ export function useTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks.value));
   };
 
+  const getTask = (id: UUIDTypes) => {
+    return tasks.value.find((task) => task.id === id);
+  };
+
   const addTask = (task: Task) => {
-    tasks.value.push(task);
+    const id: UUIDTypes = v4();
+    tasks.value.push({
+      ...task,
+      id
+    });
     saveTasks();
+    return id;
   };
 
   const updateTask = (updatedTask: Task) => {
@@ -35,12 +45,12 @@ export function useTasks() {
     }
   };
 
-  const deleteTask = (id: string) => {
+  const deleteTask = (id: UUIDTypes) => {
     tasks.value = tasks.value.filter((task) => task.id !== id);
     saveTasks();
   };
 
-  const markTaskCompleted = (id: string) => {
+  const markTaskCompleted = (id: UUIDTypes) => {
     const task = tasks.value.find((task) => task.id === id);
     if (task) {
       task.isCompleted = true;
@@ -57,10 +67,11 @@ export function useTasks() {
   return {
     tasks,
     loadTasks,
+    getTask,
     addTask,
     updateTask,
     deleteTask,
     markTaskCompleted,
     clearCompletedTasks
   };
-}
+};
