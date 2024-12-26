@@ -1,16 +1,23 @@
-export function deepClone<T>(obj: T): T {
+export function deepClone<T>(obj: T, map = new WeakMap()): T {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
 
+  if (map.has(obj)) {
+    return map.get(obj);
+  }
+
   if (Array.isArray(obj)) {
-    return obj.map((item) => deepClone(item)) as unknown as T;
+    const clonedArray = obj.map((item) => deepClone(item, map)) as unknown as T;
+    map.set(obj, clonedArray);
+    return clonedArray;
   }
 
   const clonedObj = {} as T;
+  map.set(obj, clonedObj);
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
-      clonedObj[key] = deepClone(obj[key]);
+      clonedObj[key] = deepClone(obj[key], map);
     }
   }
 
