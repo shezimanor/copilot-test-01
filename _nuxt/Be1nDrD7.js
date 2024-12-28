@@ -1,0 +1,1 @@
+import{_ as s}from"./DlAUqK2U.js";import{o,c as t,a as c,O as a}from"./C3nfCIZs.js";const r={},l={class:"flex w-full min-w-96 flex-col"},n={class:"h-screen pt-14"};function _(e,f){return o(),t("div",l,[c("div",n,[a(e.$slots,"default")])])}const m=s(r,[["render",_]]);export{m as default};

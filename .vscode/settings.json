@@ -1,0 +1,32 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": ["class", "active-class", "inactive-class"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "cSpell.words": ["Nuxt"],
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".copilot-instructions.md"
+    },
+    {
+      "file": ".nuxt-ui-instructions.md"
+    }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "No matter what language my changes are in, commit messages must be written in English."
+    },
+    {
+      "file": ".copilot-commit-message-instructions.md"
+    }
+  ]
+}
