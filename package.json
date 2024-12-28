@@ -9,7 +9,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "npm run generate",
+    "deploy": "gh-pages -d .output/public"
   },
   "dependencies": {
     "@nuxt/eslint": "^0.7.2",
@@ -32,6 +34,7 @@
     "@stylistic/eslint-plugin": "^2.11.0",
     "@vue/test-utils": "^2.4.6",
     "eslint-plugin-prettier": "^5.2.1",
+    "gh-pages": "^6.2.0",
     "happy-dom": "^15.11.7",
     "playwright-core": "^1.49.1",
     "prettier": "^3.4.1",
